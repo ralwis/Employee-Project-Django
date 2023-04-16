@@ -1,0 +1,41 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<h1>Project Index</h1>
+
+<table>
+    <tr>
+        <th>Project Id</th>
+        <th>Project Name</th>
+        <th>Started Date</th>
+        <th>Description</th>
+        <th>Leader</th>
+        
+    </tr>
+
+    {% for project in projects %}
+    <tr>
+        <td>{{project.Pid}}</td>
+        <td>{{project.projectName}}</td>
+        <td>{{project.startedDate}}</td>
+        <td>{{project.description}}</td>
+        <td>{{project.leader}}</td>
+        <td><a href="{% url 'viewProject' project.Pid %}">View</a></td>
+        <td><a href="{% url 'updateProject' project.Pid %}">Edit</a></td>
+        <td><a href="{% url 'addNewMember' project.Pid %}">Add Team Members</a></td>
+        <td><a href="{% url 'deleteProject' project.Pid %}">Delete</a></td>
+    {% endfor %}
+    </tr>
+    
+    
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock content %}
+

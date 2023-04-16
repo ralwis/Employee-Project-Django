@@ -1,0 +1,21 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<h1>Add/Edit Employee</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{addEmployees}}
+    <input type="submit" value="add">
+
+</form>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock content %}
+

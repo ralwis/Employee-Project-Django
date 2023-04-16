@@ -1,0 +1,41 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<h1>Index</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Contact Number</th>
+        <th>Designation</th>
+        
+    </tr>
+
+    {% for employee in employees %}
+    <tr>
+        <td>{{employee.Eid}}</td>
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.phoneNumber}}</td>
+        <td>{{employee.designation}}</td>
+        <td><a href="{% url 'viewEmployee' employee.Eid %}">View</a></td>
+        <td><a href="{% url 'updateEmployee' employee.Eid %}">Edit</a></td>
+        <td><a href="{% url 'deleteEmployee' employee.Eid %}">Delete</a></td>
+    {% endfor %}
+    </tr>
+    
+    
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock content %}
